@@ -12,7 +12,7 @@ def add_entry(day, date, time):
     connection = sqlite3.connect("database.db")
     c_obj = connection.cursor()
     c_obj.execute("""CREATE TABLE IF NOT EXISTS timings
-                        (day TEXT, date TEXT, time INTEGER)""")
+                        (day TEXT, date TEXT PRIMARY KEY, time INTEGER)""")
     c_obj.execute("INSERT INTO timings VALUES(?,?,?)", (day, date, time))
     connection.commit()
     connection.close()
