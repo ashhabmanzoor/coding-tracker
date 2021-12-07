@@ -17,22 +17,32 @@ Please choose an option:
 def user_choice():
     user_input = input("Please input choice: ")
     if user_input == "1":
-        day = input("Please provide day:")
-        date = input("Please provide date:")
-        time = input("Please provide time:")
+        day = input("Please provide day: ")
+        date = input("Please provide date: ")
+        time = input("Please provide time: ")
         main.add_entry(day, date, time)
+        print_msg()
+        user_choice()
     elif user_input == "2":
         print("Updating")
-        date = input("Please provide date:")
-        time = input("Please provide updated time")
+        date = input("Please provide date: ")
+        time = input("Please provide updated time: ")
         main.update_entry(date, time)
+        print("Coding Time has been updated")
+        print_msg()
+        user_choice()
     elif user_input == "3":
-        print("Deleting")
-        date = input("Please provide date:")
+        print("Deleting...")
+        date = input("Please provide date: ")
         main.delete_entry(date)
+        print("Date has been deleted")
+        print_msg()
+        user_choice()
     elif user_input == "4":
-        date = input("PLease provide specific date:")
+        date = input("PLease provide specific date: ")
         main.view_entry(date)
+        print_msg()
+        user_choice()
     elif user_input == "5":
         main.view_all_entry()
         print("""What would you like to do?
